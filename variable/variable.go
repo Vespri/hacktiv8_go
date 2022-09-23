@@ -16,7 +16,7 @@ func main() {
 	degree, major := "D3", "Full Stack Web Developer"
 	dateOnly := 23
 
-	// Forth way
+	// Fourth way
 	var satu, dua, tiga = "1", 2, 3
 
 	fmt.Println("Name : ", name)
