@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"hacktiv8/exported_unexported"
+	"hacktiv8/sesi_3/exported_unexported"
 )
 
 func main() {
