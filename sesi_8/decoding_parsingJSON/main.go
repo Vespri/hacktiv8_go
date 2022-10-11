@@ -48,4 +48,19 @@ func main() {
 	fmt.Println("Full Name :", mapResult["name"])
 	fmt.Println("Email :", mapResult["email"])
 	fmt.Println("Age :", mapResult["age"])
+
+	// Decoding JSON To Empty Interface
+	var temp interface{}
+
+	var err2 = json.Unmarshal([]byte(jsonString), &temp)
+	if err2 != nil {
+		fmt.Println(err.Error())
+		return
+	}
+
+	var interfaceResult = temp.(map[string]interface{})
+
+	fmt.Println("Full Name :", interfaceResult["name"])
+	fmt.Println("Email :", interfaceResult["email"])
+	fmt.Println("Age :", interfaceResult["age"])
 }
