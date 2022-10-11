@@ -34,4 +34,18 @@ func main() {
 	fmt.Println("Full Name :", result.Name)
 	fmt.Println("Email :", result.Email)
 	fmt.Println("Age :", result.Age)
+
+	// Decoding JSON To Map
+	var mapResult map[string]interface{}
+
+	var errs = json.Unmarshal([]byte(jsonString), &mapResult)
+
+	if errs != nil {
+		fmt.Println(err.Error())
+		return
+	}
+
+	fmt.Println("Full Name :", mapResult["name"])
+	fmt.Println("Email :", mapResult["email"])
+	fmt.Println("Age :", mapResult["age"])
 }
