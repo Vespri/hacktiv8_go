@@ -15,11 +15,11 @@ type Employee struct {
 func main() {
 	// Decoding JSON To Struct
 	var jsonString = `
-	{
-		"name": "Kresna",
-		"email": "kresna@gmail.com",
-		"age": 21
-	}
+		{
+			"name": "Kresna",
+			"email": "kresna@gmail.com",
+			"age": 21
+		}
 	`
 
 	var result Employee
@@ -63,4 +63,31 @@ func main() {
 	fmt.Println("Full Name :", interfaceResult["name"])
 	fmt.Println("Email :", interfaceResult["email"])
 	fmt.Println("Age :", interfaceResult["age"])
+
+	// Decoding JSON Array To Slice Of Struct
+	var jsonString2 = `[
+		{
+			"name": "Kresna",
+			"email": "kresna@gmail.com",
+			"age": 21
+		},
+		{
+			"name": "Vespri",
+			"email": "vespri@gmail.com",
+			"age": 21
+		}
+	]`
+
+	var resultSlice []Employee
+
+	var err3 = json.Unmarshal([]byte(jsonString2), &resultSlice)
+
+	if err3 != nil {
+		fmt.Println(err.Error())
+		return
+	}
+
+	for i, v := range resultSlice {
+		fmt.Printf("Index %d : %+v\n", i+1, v)
+	}
 }
